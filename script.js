@@ -41,9 +41,8 @@ function cleanStudentData(jsonData) {
             }
         } 
 
-        newStudent.house = capitalizeName(student.house);
-        newStudent.img = newStudent.lastName.toLowerCase() + "_" + newStudent.firstName[0].toLowerCase() + ".png"; 
-
+        newStudent.house = capitalizeName(student.house.trim());
+        newStudent.img = findFileName(newStudent.firstName, newStudent.lastName);
         studentArray.push(newStudent);
     });   
 
@@ -57,4 +56,36 @@ function capitalizeName(name){
         return name[0].toUpperCase() +name.substring(1,hyphenPos) + name[hyphenPos].toUpperCase() + name.substring(hyphenPos+1,name.length).toLowerCase();
     }
     return name[0].toUpperCase()+name.substring(1,name.length).toLowerCase();  
+}
+
+
+function findFileName(firstName, lastName) {
+
+    if(lastName.includes("-")){
+        lastName = lastName.split("-")[1];
+    }
+
+    let fileName = lastName.toLowerCase() + "_" + firstName[0].toLowerCase() + ".png";
+
+    let request = new XMLHttpRequest();
+    request.open('HEAD', "/images/" + fileName, false);
+    request.send();
+
+    if(request.status !== 404){
+        return fileName;
+    
+    }else{
+        fileName = lastName.toLowerCase() + "_" + firstName.toLowerCase() + ".png";
+        request.open('HEAD', "/images/" + fileName, false);
+        request.send();
+        console.log("/images/" + fileName);
+        console.log(request.status);
+        
+        if(request.status !== 404){
+            return fileName;
+        
+        } else{
+            return null;
+        }
+    } 
 }
