@@ -5,34 +5,57 @@
 
 /************* Generelt ************/
 main {
-    margin: 4rem 0 0 0;
+    margin: 40px 0 0 0;
     padding: 5vw;
+    background-color: #202C30;
+}
+
+@font-face {
+    font-family: 'harry_pregular';
+    src: url('fonts/harryp__-webfont.woff2') format('woff2'),
+         url('fonts/harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.7rem;
+    font-family: 'harry_pregular';
+    font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    color: #F7F7F7;
 }
 h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
+    color: #F7F7F7;
 }
 h3 {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #F7F7F7;
 }
 
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 0.8rem;
     margin-bottom: 10px;
+    color: #F7F7F7;
+}
+
+b {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: #F7F7F7;
+    text-transform: uppercase;
+
 }
 
 .hide {
@@ -47,33 +70,37 @@ nav {
     top: 0;
     width: 100%;
     z-index: 5;
+    background-color: #202C30;
+    padding: 22px 30px;
 }
 
-#menu_wrapper {
-    padding: 5vw 5vw;
-    display: inline-grid;
-    grid-template-columns: 80% 20%;
-    width: 100%;
-    text-align: right;
+nav input {
+    background-color: #E8DDD8;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    width: 30%;
 }
 
+input::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #000000;
+    text-align: center;
+    
+}
 
 .house_buttons {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    top: 50px;
-    background-color: teal;
+    float: right;
+    display: inline-block;
 }
 
 .house_buttons a {
-    margin: 2.5rem 5vw 0 165px;
-    display: block;
-    text-align: right;
+    margin-right: 25px;
     text-decoration: none;
+}
+.house_buttons a:last-child {
+    margin-right: 0;
 }
 
 a,
@@ -84,80 +111,64 @@ a:visited {
     color: #FEF5F4;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
-    font-weight: 400;
-    line-height: 8vw;
 }
-
-.burger_open {
-    width: 1.7rem;
-    height: 1.5rem;
-    display: inline-block;
-    justify-self: end;
-    position: relative;
-}
-
-.burger_open div {
-    height: 3px;
-    width: 100%;
-    background-color:black;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    transition: 0.3s ease-in-out;
-}
-.open_menu .line1 {
-    transform: rotate(45deg);
-    position: absolute;
-    left: 0;
-    top: 10px;
-}
-
-.open_menu .line2 {
-    display: none;
-}
-
-.open_menu .line3 {
-    transform: rotate(-45deg);
-    position: absolute;
-    left: 0;
-    top: 10px;
-}
-
-.burger_close {
-    width: 1.5rem;
-    display: inline-block;
-    margin: 0 auto;
-}
-
 
 /** infobox **/
 
 .info{
     border: 1px solid black;
-    border-radius: 25px;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    padding: 16px ;
     text-align: center;
+    background-color: #E8DDD8;
+    width: 60%;
+    margin: 0 auto;
 }
 
+.info p {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.info_wrapper1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 15px;
+}
+
+.info_wrapper2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 /** sorting **/ 
+
+.sort_wrapper {
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+    grid-template-columns: 10% 90%;
+    margin-bottom: 40px;
+}
 
 #sorting{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
+    cursor: pointer;
 }
 
-/** list **/ 
+/** list of students **/ 
 
 .student {
+    margin-bottom:40px;
     display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas:
-     " img name "
-     " img gender "
-     " img house "
-     " img exspel ";
+     " img name . ."
+     " img gender . . "
+     " img house . . "
+     " img . expel more";
 }
 
 .student h3[data-field=fullname] {
@@ -165,10 +176,143 @@ a:visited {
 }
 .student img {
     grid-area: img;
+    width: 70%;
 }
 .student p[data-field=house] {
     grid-area: house;
 }
-.student p[data-field=exspel] {
-    grid-area: exspel;
+
+.student p[data-field=gender] {
+    grid-area: gender;
+}
+.student .expel, .student .more {
+    grid-area: expel;
+    padding: 10px;
+    height: 45px;
+    justify-self: end;
+    align-self: end;
+    width: 70%;
+    position: relative;
+    right: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: #FF9A4A;  
+    cursor: pointer;
+}
+
+.student .more {
+    grid-area: more;
+}
+
+.student .expel p,
+.student .more p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+/**Modal**/
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalBody{
+    position: absolute;
+    z-index: 100;
+    height: 80vh;
+    width: 80vw;
+    top: 10vh;
+    left: 10vw;
+    border-radius: 5px;
+    padding:10px;
+}
+.modalBody.gryffindor{
+    background-image: url('themes/gryffindor.jpg');
+    background-size: 100% 100%;
+}
+.modalBody.hufflepuff{
+    background-image: url('themes/hufflepuff.jpg');
+    background-size: 100% 100%;
+}
+.modalBody.slytherin{
+    background-image: url('themes/slytherin.jpg');
+    background-size: 100% 100%;
+}
+.modalBody.ravenclaw{
+    background-image: url('themes/ravenclaw.jpg');
+    background-size: 100% 100%;
+}
+
+
+.modalBody div{
+    width:100%;
+    text-align: right;
+    cursor: pointer;
+    color: #F7F7F7;
+    font-family: 'harry_pregular';
+    font-size: 2rem;
+    padding-right: 5px;
+
+}
+
+.modalgrid {
+    position: relative;
+    width: 50%;
+    left: 10%;
+    top: 15%;
+    justify-items: left;
+    display: grid;
+    grid-template-columns: 25% 25%;
+    grid-template-rows: auto auto auto auto 15% 15% 15% 15%;
+    grid-template-areas:
+     "img name"
+     "img gender"
+     "img house"
+     "img blodstatus"
+     ". ."
+     ". prefect"
+     ". inquisitorial"
+     ". expelled";
+     
+}
+
+.modalgrid p {
+ display: inline;
+}
+
+.modalgrid h3 {
+    grid-area: name;
+}
+.modalgrid img {
+    grid-area: img;
+    width: 70%;
+}
+.modalgrid .house {
+    grid-area: house;
+}
+
+.modalgrid .gender {
+    grid-area: gender;
+}
+
+.modalgrid .blodStatus {
+    grid-area: blodstatus;
+}
+
+.modalgrid .prefect {
+    grid-area: prefect;
+}
+.modalgrid .inquisitorial {
+    grid-area: inquisitorial;
+}
+.modalgrid .expel {
+    grid-area: expelled;
 }

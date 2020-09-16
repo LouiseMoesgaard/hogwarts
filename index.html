@@ -4,76 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav>
-            <div id="menu_wrapper">
-
-                <input>
-
-                <div class="burger_open">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </div> 
+                <input placeholder="Search for student">
 
             <div class="house_buttons hide">
                 <a href="#" role="button" data-action="filter" data-filter="all">All students</a> 
                 <a href="#" role="button" data-action="filter" data-filter="slytherin">Slytherin</a>
                 <a href="#" role="button" data-action="filter" data-filter="ravenclaw">Ravenclaw</a>
                 <a href="#" role="button" data-action="filter" data-filter="hufflepuff">Hufflepuff</a>
-                <a href="#" role="button" data-action="filter" data-filter="Gryffindor">Gryffindor</a>
+                <a href="#" role="button" data-action="filter" data-filter="gryffindor">Gryffindor</a>
                 <a href="#" role="button" data-action="filter" data-filter="exspelled">Exspelled students</a>  
             </div>
         </nav>
     </header>
-
     <main>
 
         <h1> Hogwarts school of witchcraft and wizzardy </h1>
 
         <div class="info">
-            <p data-field="all"> 
-                All students: <span></span>
-            </p>
-            <p data-field="displayed"> 
-                Displayed students: <span></span>
-            </p>
-            <p data-field="exspelled"> 
-                Exspelled students: <span></span>
-            </p>
-            <p data-field="slytherin"> 
-                Slytherin: <span></span>
-            </p>
-            <p data-field="ravenclaw"> 
-                Ravenclaw: <span></span>
-            </p>
-            <p data-field="hufflepuff"> 
-                Hufflepuff: <span></span>
-            </p>
-            <p data-field="gryffindor"> 
-                Gryffindor: <span></span>
-            </p>
+             <div class="info_wrapper1">
+                <p data-field="all"> 
+                    All students: <span></span>
+                </p>
+                <p data-field="displayed"> 
+                    Displayed students: <span></span>
+                </p>
+                <p data-field="exspelled"> 
+                    Exspelled students: <span></span>
+                </p>
+            </div>
+            <div class="info_wrapper2">
+                <p data-field="slytherin"> 
+                    Slytherin: <span></span>
+                </p>
+                <p data-field="ravenclaw"> 
+                    Ravenclaw: <span></span>
+                </p>
+                <p data-field="hufflepuff"> 
+                    Hufflepuff: <span></span>
+                </p>
+                <p data-field="gryffindor"> 
+                    Gryffindor: <span></span>
+                </p>
+            </div>
         </div>
 
-        <h2></h2>
+        <h2>All students</h2>
 
         <div> 
             <p></p>
         </div>
 
         <div id="list">
-            <h2>Sort by:</h2> 
-              <div id="sorting">
-                <p data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</p>
-                <p data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</p>
-                <p data-action="sort" data-sort-direction="asc" data-sort="house">House</p>
-                <p data-action="sort" data-sort-direction="asc" data-sort="exspelled">Exspelled</p>
-                <p data-action="sort" data-sort-direction="asc" data-sort="role">Role</p>
-                </div>
+            <div class="sort_wrapper">
+                <b>Sort by:</b> 
+                <div id="sorting">
+                    <p data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</p>
+                    <p data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</p>
+                    <p data-action="sort" data-sort-direction="asc" data-sort="house">House</p>
+                    <p data-action="sort" data-sort-direction="asc" data-sort="exspelled">Exspelled</p>
+                    <p data-action="sort" data-sort-direction="asc" data-sort="role">Role</p>
+                 </div>
+            </div>
             <div class="students">
               <!-- animal template will be copied and inserted here -->
             </div>
@@ -81,26 +78,42 @@
 
         <template id="student">
             <div class="student">
-                <img data-field="img"></img>
+                <img data-field="img">
                 <h3 data-field="fullname"></h3>
                 <p data-field="gender">Gender: <span></span></p>
                 <p data-field="house">House: <span></span></p>
-                <div role="button" class="expel" data-first-name="" data-last-name=""> Expel</div>
+                <div role="button" class="expel" data-first-name="" data-last-name=""> <p>Expel</p></div>
+                <div role="button" class="more"> <p>More</p></div>
             </div>
         </template>
 
+        <div id="modal" class="hide">
+            <div class="modalBody">
+                <div>X</div>
+                <div class="modalgrid">
+                    <img class="studentPhoto">
+                    <h3 class="fullname"></h3>
+                    <p class="gender">Gender: <span></span></p>
+                    <p class="house">House: <span></span> </p>
+                    <p class="bloodStatus">Blood status: <span></span></p>
+                    <label class="prefect"> <p>Prefect: </p>
+                        <input type="checkbox"></input>
+                    </label>
+                    <label class="inquisitorial"> <p>Inquisitorial: </p>
+                        <input type="checkbox"></input>
+                    </label>
+                    <label class="expel"> <p>Expelled:</p>
+                        <input type="checkbox" disabled></input>
+                    </label>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
 
     </footer>
-
-    
-
-
-
-
-
     <script src="script.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>

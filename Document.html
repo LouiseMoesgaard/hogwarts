@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://127.0.0.1:8080/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Document_files/style.css">
+    <link href="./Document_files/css2" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+                <input>
+
+            <div class="house_buttons hide">
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="all">All students</a> 
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="slytherin">Slytherin</a>
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="ravenclaw">Ravenclaw</a>
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="hufflepuff">Hufflepuff</a>
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="gryffindor">Gryffindor</a>
+                <a href="http://127.0.0.1:8080/#" role="button" data-action="filter" data-filter="exspelled">Exspelled students</a>  
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <h1> Hogwarts school of witchcraft and wizzardy </h1>
+
+        <div class="info">
+             <div class="info_wrapper1">
+                <p data-field="all"> 
+                    All students: <span>34</span>
+                </p>
+                <p data-field="displayed"> 
+                    Displayed students: <span>34</span>
+                </p>
+                <p data-field="exspelled"> 
+                    Exspelled students: <span>0</span>
+                </p>
+            </div>
+            <div class="info_wrapper2">
+                <p data-field="slytherin"> 
+                    Slytherin: <span>9</span>
+                </p>
+                <p data-field="ravenclaw"> 
+                    Ravenclaw: <span>8</span>
+                </p>
+                <p data-field="hufflepuff"> 
+                    Hufflepuff: <span>9</span>
+                </p>
+                <p data-field="gryffindor"> 
+                    Gryffindor: <span>8</span>
+                </p>
+            </div>
+        </div>
+
+        <h2></h2>
+
+        <div> 
+            <p></p>
+        </div>
+
+        <div id="list">
+            <h2>Sort by:</h2> 
+              <div id="sorting">
+                <p data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</p>
+                <p data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</p>
+                <p data-action="sort" data-sort-direction="asc" data-sort="house">House</p>
+                <p data-action="sort" data-sort-direction="asc" data-sort="exspelled">Exspelled</p>
+                <p data-action="sort" data-sort-direction="asc" data-sort="role">Role</p>
+                </div>
+            <div class="students">
+            <div class="student">
+                <img data-field="img" src="./Document_files/parkinson_p.png">
+                <h3 data-field="fullname">Pansy Parkinson</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Pansy" data-last-name="Parkinson"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/abbott_h.png">
+                <h3 data-field="fullname">Hannah Abbott</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Hannah" data-last-name="Abbott"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/bones_s.png">
+                <h3 data-field="fullname">Susan Bones</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Susan" data-last-name="Bones"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/fletchley_j.png">
+                <h3 data-field="fullname">Justin Finch-Fletchley</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Justin" data-last-name="Finch-Fletchley"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/boot_t.png">
+                <h3 data-field="fullname">Terry Boot</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Terry" data-last-name="Boot"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/smith_z.png">
+                <h3 data-field="fullname">Zacharias Smith</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Zacharias" data-last-name="Smith"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/macmillan_e.png">
+                <h3 data-field="fullname">Ernest Macmillan "Erni"</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Ernest" data-last-name="Macmillan"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/jones_m.png">
+                <h3 data-field="fullname">Megan Jones</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Megan" data-last-name="Jones"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/hopkins_w.png">
+                <h3 data-field="fullname">Wayne Hopkins</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Wayne" data-last-name="Hopkins"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/null">
+                <h3 data-field="fullname">Leanne </h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Leanne" data-last-name=""> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/brown_l.png">
+                <h3 data-field="fullname">Lavender Brown</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Lavender" data-last-name="Brown"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/finnigan_s.png">
+                <h3 data-field="fullname">Seamus Finnigan</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Seamus" data-last-name="Finnigan"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/granger_h.png">
+                <h3 data-field="fullname">Hermione Jean Granger</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Hermione" data-last-name="Granger"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/longbottom_n.png">
+                <h3 data-field="fullname">Neville Longbottom</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Neville" data-last-name="Longbottom"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/patil_parvati.png">
+                <h3 data-field="fullname">Parvati Patil</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Parvati" data-last-name="Patil"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/potter_h.png">
+                <h3 data-field="fullname">Harry James Potter</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Harry" data-last-name="Potter"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/thomas_d.png">
+                <h3 data-field="fullname">Dean Thomas</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Dean" data-last-name="Thomas"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/weasley_r.png">
+                <h3 data-field="fullname">Ronald Bilius Weasley</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Gryffindor</span></p>
+                <div role="button" class="expel" data-first-name="Ronald" data-last-name="Weasley"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/brocklehurst_m.png">
+                <h3 data-field="fullname">Mandy Brocklehurst</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Mandy" data-last-name="Brocklehurst"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/patil_padma.png">
+                <h3 data-field="fullname">Padma Patil</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Padma" data-last-name="Patil"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/turpin_l.png">
+                <h3 data-field="fullname">Lisa Turpin</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Lisa" data-last-name="Turpin"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/cornfoot_s.png">
+                <h3 data-field="fullname">Stephen Cornfoot</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Hufflepuff</span></p>
+                <div role="button" class="expel" data-first-name="Stephen" data-last-name="Cornfoot"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/goldstein_a.png">
+                <h3 data-field="fullname">Anthony Goldstein</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Anthony" data-last-name="Goldstein"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/corner_m.png">
+                <h3 data-field="fullname">Michael Corner</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Michael" data-last-name="Corner"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/entwistle_k.png">
+                <h3 data-field="fullname">Kevin Entwistle</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Kevin" data-last-name="Entwistle"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/li_s.png">
+                <h3 data-field="fullname">Sue Li</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Ravenclaw</span></p>
+                <div role="button" class="expel" data-first-name="Sue" data-last-name="Li"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/malfoy_d.png">
+                <h3 data-field="fullname">Draco Lucius Malfoy</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Draco" data-last-name="Malfoy"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/crabbe_v.png">
+                <h3 data-field="fullname">Vincent Crabbe</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Vincent" data-last-name="Crabbe"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/davis_t.png">
+                <h3 data-field="fullname">Tracey Davis</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Tracey" data-last-name="Davis"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/goyle_g.png">
+                <h3 data-field="fullname">Gregory Goyle</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Gregory" data-last-name="Goyle"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/bulstrode_m.png">
+                <h3 data-field="fullname">Millicent Bulstrode</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Millicent" data-last-name="Bulstrode"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/nott_t.png">
+                <h3 data-field="fullname">Theodore Nott</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Theodore" data-last-name="Nott"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/greengrass_d.png">
+                <h3 data-field="fullname">Daphne Greengrass</h3>
+                <p data-field="gender">Gender: <span>Girl</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Daphne" data-last-name="Greengrass"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        
+            <div class="student">
+                <img data-field="img" src="./Document_files/zabini_b.png">
+                <h3 data-field="fullname">Blaise Zabini</h3>
+                <p data-field="gender">Gender: <span>Boy</span></p>
+                <p data-field="house">House: <span>Slytherin</span></p>
+                <div role="button" class="expel" data-first-name="Blaise" data-last-name="Zabini"> Expel</div>
+                <div role="button" class="more"> More</div>
+            </div>
+        </div>
+        </div>
+
+        <template id="student"></template>
+
+        <div id="modal" class="hide">
+            <div>X</div>
+            <img class="studentPhoto">
+                <h3 class="fullname"></h3>
+                <img class="crest">
+                <p class="blodStatus"></p>
+                <label class="prefect">
+                    <input type="checkbox">
+                </label>
+                <label class="expel">
+                    <input type="checkbox" disabled="">
+                </label>
+                <label class="inquisitorial">
+                    <input type="checkbox">
+                </label>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="./Document_files/script.js"></script>
+    <script src="./Document_files/modal.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+</body></html>
