@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/************* Generelt ************/
+main {
+    margin: 4rem 0 0 0;
+    padding: 5vw;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+
+/** navigation **/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+#menu_wrapper {
+    padding: 5vw 5vw;
+    display: inline-grid;
+    grid-template-columns: 80% 20%;
+    width: 100%;
+    text-align: right;
+}
+
+
+.house_buttons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    background-color: teal;
+}
+
+.house_buttons a {
+    margin: 2.5rem 5vw 0 165px;
+    display: block;
+    text-align: right;
+    text-decoration: none;
+}
+
+a,
+a:active,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #FEF5F4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 8vw;
+}
+
+.burger_open {
+    width: 1.7rem;
+    height: 1.5rem;
+    display: inline-block;
+    justify-self: end;
+    position: relative;
+}
+
+.burger_open div {
+    height: 3px;
+    width: 100%;
+    background-color:black;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: 0.3s ease-in-out;
+}
+.open_menu .line1 {
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.open_menu .line2 {
+    display: none;
+}
+
+.open_menu .line3 {
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+.burger_close {
+    width: 1.5rem;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+/** infobox **/
+
+.info{
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+
+/** sorting **/ 
+
+#sorting{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+/** list **/ 
+
+.student {
+    display: grid;
+    grid-template-areas:
+     " img name "
+     " img gender "
+     " img house "
+     " img exspel ";
+}
+
+.student h3[data-field=fullname] {
+    grid-area: name;
+}
+.student img {
+    grid-area: img;
+}
+.student p[data-field=house] {
+    grid-area: house;
+}
+.student p[data-field=exspel] {
+    grid-area: exspel;
+}
