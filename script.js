@@ -11,7 +11,10 @@ const Student = {
     nickName: "",
     img: "",
     house: "",
-    exspelled: false
+    exspelled: false,
+    prefect: false,
+    inquisitorial: false
+
 };
 
 document.addEventListener("DOMContentLoaded", compiledData);
@@ -145,7 +148,6 @@ function filtering() {
     let filter = this.dataset.filter;
 
     document.querySelector("h2").textContent = this.textContent;
-    console.log(filter)
     if (filter === "all") {
        filteredStudents = studentArray;
     } else if(filter === "exspelled"){
