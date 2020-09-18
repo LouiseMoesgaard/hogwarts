@@ -17,6 +17,7 @@ const Student = {
 
 };
 
+
 document.addEventListener("DOMContentLoaded", compiledData);
 
 async function compiledData() {
@@ -24,6 +25,7 @@ async function compiledData() {
     cleanStudentData(jsonData);
     setButtonEvent();
     displayList(studentArray);
+    searching(studentArray);
 
 }
 
@@ -154,7 +156,6 @@ function filtering() {
         filteredStudents = exspelledStudents;  
     } else {
         filteredStudents = studentArray.filter(elm => {
-            console.log(filter, elm.house.toLowerCase())
             return elm.house.toLowerCase() === filter; //filtrerer alle elementer væk, som ikke overholder det boolske udtryk.
         });
     }
@@ -231,6 +232,21 @@ function sorting() {
     }
 }
 
+
+function searching(studentArray) {
+
+    let searchBar = document.querySelector('#searchbar');
+    console.log(searchBar);
+
+    searchBar.addEventListener("input", (e)=> {
+        const target = e.target.value;
+        const searched = studentArray.filter(elm => {
+            return elm.firstName.includes(target) || elm.lastName.includes(target);
+        })
+        displayList(searched);
+    });
+}
+
 function expelStudent(e) {
     e.stopPropagation();
     let firstName = this.dataset.firstName;
@@ -285,3 +301,19 @@ function displayStudent(student) {
     document.querySelector(".students").appendChild(clone);
 }
 
+
+function hackTheSystem() {
+
+    //inject myself
+    //create an object - fromt student prototype.
+    //push to alle students
+
+    const myself = Object.create(Student);
+    myself.firstName = "Louise";
+    myself.hacker = true;
+
+    // function expel(student) {
+        //if()
+    //}
+
+}
