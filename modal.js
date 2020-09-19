@@ -70,7 +70,11 @@ function bloodStatus(student) {
     }
     if(hacked){
         let bloodStatuses = ["Pure-blood", "Half-blood", "Muggle-born"];
-        bloodStatus = bloodStatuses[Math.floor(Math.random() * bloodStatus.length)];
+        if(bloodStatus == "Pure-blood"){
+            bloodStatus = bloodStatuses[Math.floor(Math.random() * bloodStatuses.length)];
+        } else if(bloodStatus == "Muggle-born" || bloodStatus == "Half-blood"){
+            bloodStatus = "Pure-blood";
+        } 
     }
 
     return bloodStatus;
@@ -80,7 +84,6 @@ function bloodStatus(student) {
 function inquisitorialStudent() {
     let student = JSON.parse(this.dataset.student);
     let index = findStudentInArray(student.firstName, student.lastName); 
-    console.log(student)
 
         if(student.inquisitorial){
             studentArray[index].inquisitorial = false;

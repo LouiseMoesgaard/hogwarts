@@ -10,6 +10,14 @@ main {
     background-color: #202C30;
 }
 
+footer{
+    background-color: #202C30;
+}
+
+footer p{
+    margin: 0;
+}
+
 @font-face {
     font-family: 'harry_pregular';
     src: url('fonts/harryp__-webfont.woff2') format('woff2'),
@@ -160,6 +168,10 @@ a:visited {
 
 /** list of students **/ 
 
+.expel_glide{
+    transform: translatex(5000px);
+}
+
 .student {
     margin-bottom:40px;
     display: grid;
@@ -169,6 +181,11 @@ a:visited {
      " img gender . . "
      " img house . . "
      " img . expel more";
+
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear
+    -o-transition: all .5s linear;
+    transition: all .5s linear;
 }
 
 .student h3[data-field=fullname] {

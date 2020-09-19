@@ -120,9 +120,9 @@ function findFileName(firstName, lastName) {
             return fileName;
         
         } else{
-            return null;
+            return "placeholder.png";
         }
-    } 
+    }
 }
 
 function findStudentInArray(firstName, lastName) {
@@ -136,8 +136,6 @@ function findStudentInArray(firstName, lastName) {
     }
 
     return index;
-
-
 }
 
 function setButtonEvent() {
@@ -240,7 +238,6 @@ function sorting() {
 function searching(studentArray) {
 
     let searchBar = document.querySelector('#searchbar');
-    console.log(searchBar);
 
     searchBar.addEventListener("input", (e)=> {
         const target = e.target.value;
@@ -261,10 +258,18 @@ function expelStudent(e) {
     if(!studentArray[index].hacker){
         studentArray[index].expelled = true;
         expelledStudents.push(studentArray.splice(index, 1)[0]);
+        alert(`${firstName} has been EXPELLED. BAD ${studentArray[index].gender.toUpperCase()}`);
+        this.parentNode.classList.add("expel_glide");
+    } else {
+        document.querySelector("#no").play();
+        setTimeout(()=>{ alert(`How dare you to try expelling ${firstName}? She is the queen of hackers`)},200);
+       
     }
-
-
-    displayList(studentArray);
+    
+    setTimeout(()=>{
+        displayList(studentArray);
+    }, 500);
+  
 }
 
 function displayList(students) {
@@ -313,16 +318,13 @@ function displayStudent(student) {
 function hackTheSystem() {
     hacked = true;
 
-    //inject myself
-    //create an object - fromt student prototype.
-    //push to alle students
-
     const myself = Object.create(Student);
     myself.firstName = "Louise";
     myself.nickName = "1337 h4x0r";
     myself.middleName = "Moesgaard";
     myself.lastName = "Nielsen";
     myself.gender = "Girl";
+    myself.img = "placeholder.png";
     myself.hacker = true;
 
     studentArray.push(myself);
@@ -330,10 +332,10 @@ function hackTheSystem() {
 
     let houseValues = ["Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw"];
 
-    myself.house = houseValues[Math.floor(Math.random()*houseValues.length)];
+    myself.house = houseValues[Math.floor(Math.random() * houseValues.length)];
 
     for (let i = 0; i < studentArray.length; i++){
-        studentArray[i].bloodStatus = bloodStatus();
+        studentArray[i].bloodStatus = bloodStatus(studentArray[i]);
     }
 
 }
