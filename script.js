@@ -1,8 +1,9 @@
 "use strict";
+let hacked = false;
 
 let studentArray = [];
 let filteredStudents = [];
-let exspelledStudents = [];
+let expelledStudents = [];
 
 const Student = {
     firstName: "",
@@ -11,7 +12,8 @@ const Student = {
     nickName: "",
     img: "",
     house: "",
-    exspelled: false,
+    bloodStatus: "",
+    expelled: false,
     prefect: false,
     inquisitorial: false
 
@@ -21,12 +23,12 @@ const Student = {
 document.addEventListener("DOMContentLoaded", compiledData);
 
 async function compiledData() {
+    await loadFamilies();
     let jsonData = await loadJSON();
     cleanStudentData(jsonData);
     setButtonEvent();
     displayList(studentArray);
     searching(studentArray);
-
 }
 
 function loadJSON(){
@@ -62,6 +64,8 @@ function cleanStudentData(jsonData) {
         newStudent.house = capitalizeName(student.house.trim());
         newStudent.gender = capitalizeName(student.gender);
         newStudent.img = findFileName(newStudent.firstName, newStudent.lastName);
+        newStudent.bloodStatus = bloodStatus(newStudent);
+
         studentArray.push(newStudent);
     });   
 }
@@ -152,8 +156,8 @@ function filtering() {
     document.querySelector("h2").textContent = this.textContent;
     if (filter === "all") {
        filteredStudents = studentArray;
-    } else if(filter === "exspelled"){
-        filteredStudents = exspelledStudents;  
+    } else if(filter === "expelled"){
+        filteredStudents = expelledStudents;  
     } else {
         filteredStudents = studentArray.filter(elm => {
             return elm.house.toLowerCase() === filter; //filtrerer alle elementer væk, som ikke overholder det boolske udtryk.
@@ -254,7 +258,11 @@ function expelStudent(e) {
 
     let index = findStudentInArray(firstName, lastName);
 
-    exspelledStudents.push(studentArray.splice(index, 1)[0]);
+    if(!studentArray[index].hacker){
+        studentArray[index].expelled = true;
+        expelledStudents.push(studentArray.splice(index, 1)[0]);
+    }
+
 
     displayList(studentArray);
 }
@@ -273,7 +281,7 @@ function displayList(students) {
 function displayInfo(students) {
     document.querySelector("[data-field=all] span").textContent = studentArray.length;
     document.querySelector("[data-field=displayed] span").textContent = students.length;
-    document.querySelector("[data-field=exspelled] span").textContent = exspelledStudents.length;
+    document.querySelector("[data-field=expelled] span").textContent = expelledStudents.length;
     document.querySelector("[data-field=slytherin] span").textContent = slytherinStudents().length;
     document.querySelector("[data-field=ravenclaw] span").textContent = ravenclawStudents().length;
     document.querySelector("[data-field=hufflepuff] span").textContent = hufflepuffStudents().length;
@@ -303,6 +311,7 @@ function displayStudent(student) {
 
 
 function hackTheSystem() {
+    hacked = true;
 
     //inject myself
     //create an object - fromt student prototype.
@@ -310,10 +319,21 @@ function hackTheSystem() {
 
     const myself = Object.create(Student);
     myself.firstName = "Louise";
+    myself.nickName = "1337 h4x0r";
+    myself.middleName = "Moesgaard";
+    myself.lastName = "Nielsen";
+    myself.gender = "Girl";
     myself.hacker = true;
 
-    // function expel(student) {
-        //if()
-    //}
+    studentArray.push(myself);
+    displayList(studentArray);
+
+    let houseValues = ["Gryffindor", "Hufflepuff", "Slytherin", "Ravenclaw"];
+
+    myself.house = houseValues[Math.floor(Math.random()*houseValues.length)];
+
+    for (let i = 0; i < studentArray.length; i++){
+        studentArray[i].bloodStatus = bloodStatus();
+    }
 
 }
