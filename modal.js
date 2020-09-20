@@ -122,6 +122,6 @@ function inquisitorialStudent() {
             this.dataset.student = JSON.stringify(studentArray[index]);
             modal.querySelector(".inquisitorial input").checked = studentArray[index].inquisitorial;
             alert("NOOOOOOOO I AM HAAAACKED!");
-        },5000);
+        },3000);
     }
 }

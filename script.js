@@ -37,7 +37,7 @@ async function compiledData() {
  * @returns {Array<object>}student data
  */
 function loadJSON(){
-    return fetch("students.json")
+    return fetch("https://petlatkea.dk/2020/hogwarts/students.json")
     .then( response => response.json() )
     .then( jsonData => {
         // when loaded, prepare objects
