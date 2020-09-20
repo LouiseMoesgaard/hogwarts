@@ -183,7 +183,7 @@ a:visited {
      " img . expel more";
 
     -webkit-transition: all .5s linear;
-    -moz-transition: all .5s linear
+    -moz-transition: all .5s linear;
     -o-transition: all .5s linear;
     transition: all .5s linear;
 }
