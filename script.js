@@ -16,7 +16,6 @@ const Student = {
     expelled: false,
     prefect: false,
     inquisitorial: false
-
 };
 
 
@@ -248,8 +247,7 @@ function searching(studentArray) {
     });
 }
 
-function expelStudent(e) {
-    e.stopPropagation();
+function expelStudent() {
     let firstName = this.dataset.firstName;
     let lastName = this.dataset.lastName;
 
