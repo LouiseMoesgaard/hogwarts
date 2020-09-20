@@ -3,6 +3,10 @@
 let families = {};
 const modal = document.querySelector("#modal");
 
+/**
+ * Load json from families endpoint
+ * @returns {object} Families
+ */
 function loadFamilies(){
     return fetch("https://petlatkea.dk/2020/hogwarts/families.json")
     .then( response => response.json() )
@@ -11,7 +15,10 @@ function loadFamilies(){
     })
 };
 
-
+/**
+ * Shows details about a single student in the modal
+ * @param {object} student 
+ */
 function showModal(student) { 
     modal.querySelector(".modalBody").className = "modalBody";
 
@@ -38,8 +45,11 @@ function showModal(student) {
     modal.classList.remove("hide");
 }
 
+/**
+ * toggles prefect status on a student
+ */
 function prefectStudent(){
-    let student = JSON.parse(this.dataset.student); // fået hjælp af bekendte. 
+    let student = JSON.parse(this.dataset.student);
     let index = findStudentInArray(student.firstName, student.lastName); 
     if(student.prefect){
         studentArray[index].prefect = false;
@@ -59,6 +69,11 @@ function prefectStudent(){
     modal.querySelector(".prefect input").checked = studentArray[index].prefect;
 }
 
+/**
+ * Gets blood status of a student
+ * @param {object} student 
+ * @returns {string} blood type
+ */
 function bloodStatus(student) { 
     let bloodStatus;
     if(families.pure.indexOf(student.lastName) !== -1 && families.half.indexOf(student.lastName) === -1){
@@ -80,7 +95,9 @@ function bloodStatus(student) {
     return bloodStatus;
     
 }
-
+/**
+ * toggles inquisitional sqaud status on a student
+ */
 function inquisitorialStudent() {
     let student = JSON.parse(this.dataset.student);
     let index = findStudentInArray(student.firstName, student.lastName); 

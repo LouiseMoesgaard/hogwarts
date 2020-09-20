@@ -20,7 +20,10 @@ const Student = {
 
 
 document.addEventListener("DOMContentLoaded", compiledData);
-
+/**
+ * Controller
+ * gets data , set events, cleans data and shows the list
+ */
 async function compiledData() {
     await loadFamilies();
     let jsonData = await loadJSON();
@@ -29,7 +32,10 @@ async function compiledData() {
     displayList(studentArray);
     searching(studentArray);
 }
-
+/**
+ * gets student data
+ * @returns {Array<object>}student data
+ */
 function loadJSON(){
     return fetch("students.json")
     .then( response => response.json() )
@@ -39,6 +45,11 @@ function loadJSON(){
     })
 };
 
+/**
+ * Cleans student data, by splitting up name string, 
+ * and calculating missing data
+ * @param {Array<object>} jsonData 
+ */
 function cleanStudentData(jsonData) {
     jsonData.forEach(student => {
         let nameArray = student.fullname.trim().split(" ");
@@ -68,7 +79,11 @@ function cleanStudentData(jsonData) {
         studentArray.push(newStudent);
     });   
 }
-
+/**
+ * capitalizes a string
+ * @param {string} name 
+ * @returns {string} capitalized name
+ */
 function capitalizeName(name){
     if(name.includes("-")){
         let hyphenPos = name.indexOf("-") + 1;
@@ -77,6 +92,11 @@ function capitalizeName(name){
     return name[0].toUpperCase()+name.substring(1,name.length).toLowerCase();  
 }
 
+/**
+ * Gets the full name of a student
+ * @param {object} student 
+ * @returns {string} full name
+ */
 function calcFullName(student) {
     let newFullName;
 
@@ -95,6 +115,12 @@ function calcFullName(student) {
     return newFullName;
 }
 
+/**
+ * Gets the filename for a student image by trying out different patterns
+ * @param {string} firstName 
+ * @param {string} lastName 
+ * @returns {string} filename
+ */
 function findFileName(firstName, lastName) {
 
     if(lastName.includes("-")){
@@ -123,7 +149,12 @@ function findFileName(firstName, lastName) {
         }
     }
 }
-
+/**
+ * finds the index of student in studentArray
+ * @param {string} firstName 
+ * @param {string} lastName 
+ * @returns {number} index
+ */
 function findStudentInArray(firstName, lastName) {
     let index = -1;
 
@@ -137,6 +168,9 @@ function findStudentInArray(firstName, lastName) {
     return index;
 }
 
+/**
+ * Sets up events for filter and sorting buttons
+ */
 function setButtonEvent() {
     document.querySelectorAll("[data-action=filter]").forEach(elm => {
         elm.addEventListener("click", filtering);
@@ -147,6 +181,9 @@ function setButtonEvent() {
     })
 }
 
+/**
+ * Filters studentArray by the value of filter attribute on button
+ */
 function filtering() {
     let filter = this.dataset.filter;
 
@@ -164,31 +201,49 @@ function filtering() {
 }
 
 
+/**
+ * Filters all students of house Slytherin
+ * @returns {Array<object>} students
+ */
 function slytherinStudents() {
     return studentArray.filter(elm => {
         return elm.house === 'Slytherin';
     });
 }
 
+/**
+ * Filters all students of house Ravenclaw
+ * @returns {Array<object>} students
+ */
 function ravenclawStudents() {
     return studentArray.filter(elm => {
         return elm.house === 'Ravenclaw';
     });
 }
 
+/**
+ * Filters all students of house Hufflepuff
+ * @returns {Array<object>} students
+ */
 function hufflepuffStudents() {
     return studentArray.filter(elm => {
         return elm.house === 'Hufflepuff';
     });
 }
 
+/**
+ * Filters all students of house Gryffindor
+ * @returns {Array<object>} students
+ */
 function gryffindorStudents() {
     return studentArray.filter(elm => {
         return elm.house === 'Gryffindor';
     });
 }
 
-
+/**
+ * Sorts current list by sortKey and direction on button pressed
+ */
 function sorting() {
     let sortKey = this.dataset.sort;
     let sortDirection = this.dataset.sortDirection;
@@ -233,7 +288,10 @@ function sorting() {
     }
 }
 
-
+/**
+ * filters studentArray by the given search string
+ * @param {Array<object>} studentArray 
+ */
 function searching(studentArray) {
 
     let searchBar = document.querySelector('#searchbar');
@@ -247,6 +305,9 @@ function searching(studentArray) {
     });
 }
 
+/**
+ * Expels a student by removing from studentArray and adding to expel list
+ */
 function expelStudent() {
     let firstName = this.dataset.firstName;
     let lastName = this.dataset.lastName;
@@ -270,6 +331,10 @@ function expelStudent() {
   
 }
 
+/**
+ * Displays the given list in the DOM
+ * @param {Array<object>} students 
+ */
 function displayList(students) {
     // clear the list
     document.querySelector("#list .students").innerHTML = "";
@@ -280,7 +345,10 @@ function displayList(students) {
       
 }
 
-
+/**
+ * Displays info about data arrays
+ * @param {Array<object>} students 
+ */
 function displayInfo(students) {
     document.querySelector("[data-field=all] span").textContent = studentArray.length;
     document.querySelector("[data-field=displayed] span").textContent = students.length;
@@ -292,6 +360,10 @@ function displayInfo(students) {
 
 }
 
+/**
+ * Displays a single Student in the DOM
+ * @param {object} student 
+ */
 function displayStudent(student) {
     // create clone
     const clone = document.querySelector("template#student").content.cloneNode(true);
@@ -312,7 +384,10 @@ function displayStudent(student) {
     document.querySelector(".students").appendChild(clone);
 }
 
-
+/**
+ * Hacks the system adding a hacker to studentList, 
+ * and shifting bloodStatuses
+ */
 function hackTheSystem() {
     hacked = true;
 
